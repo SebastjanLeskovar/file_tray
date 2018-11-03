@@ -1,0 +1,11 @@
+{
+    "root_directory": "C:\\corp_data",
+    "project_number": 1,
+    "translation_project": [
+        "1. Original",
+        "2. Translation",
+        "3. Revision",
+        "4. Implemented changes",
+        "5. Final version"
+    ]
+}
