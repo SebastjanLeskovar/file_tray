@@ -63,7 +63,6 @@ The folder structure will be created at the designated location.
 ### V1.0
 
 * Basic functionality. 
-* A function to auto-detect programs location (where the user has upzipped it), so he or she does not need to set the "root_directory" parameter. The user can have an option to manually change the location of project folders. 
 
 ## Bugs and Issues
 
