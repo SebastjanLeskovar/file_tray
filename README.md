@@ -56,7 +56,15 @@ The folder structure will be created at the designated location.
 
 * Adding creation of a project log file in .docx format.
 
+#### V2.5
+
+* Adding support for a log file to record a list of all actions that this program has done. 
+
 ### V2.0
+
+* Option to cancel project creation.
+
+#### V1.5
 
 * Support for other translation agency services, e.g., proofreading, translation only etc. 
 
