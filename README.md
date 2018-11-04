@@ -74,6 +74,18 @@ The folder structure will be created at the designated location.
 
 ## Bugs and Issues
 
+1. (03.11.2018): If a project folder already axists at the location, the following error is raised:
+```bash
+Traceback (most recent call last):
+  File "file_tray.py", line 68, in <module>
+    create_project_folder_structure()
+  File "file_tray.py", line 53, in create_project_folder_structure
+    os.makedirs(os.path.join(config["root_directory"], project_folder_name))
+  [...]
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\corp_data\\Project No 6'
+```
+Appearently, the check "if os.path.isdir(project_folder_name):" does not work. The issue might get fixed by setting the perameter "exist_ok" in os.makedirs(). 
+
 ## Author
 
 Sebastjan Leskovar - [sebastjan.leskovar@gmail.com](mailto:sebastjan.leskovar@gmail.com) - [github.com/SebastjanLeskovar](https://github.com/SebastjanLeskovar)
