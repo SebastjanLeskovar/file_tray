@@ -50,11 +50,14 @@ The folder structure will be created at the designated location.
 ### V4.0
 
 * Implementing tkinter GUI
-* Implementing classes
 
-### V3.0
+### V3.5
 
-* Adding creation of a project log file in .docx format.
+* Adding creation of a project specifics file in .docx format.
+
+#### V3.0
+
+* Implementation of classes
 
 #### V2.5
 
