@@ -103,7 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# PRoject settings
+# Project settings
 .vscode
 personal_notes.txt
 Log.txt
+config-backup.txt

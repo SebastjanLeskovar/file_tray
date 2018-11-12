@@ -1,6 +1,11 @@
 {
     "root_directory": "C:\\corp_data",
     "project_number": 1,
+    "service_selection": {
+        "1": "translation",
+        "2": "translation_and_revision",
+        "3": "proofreading"
+    },
     "service": {
         "translation": [
             "1. Original",

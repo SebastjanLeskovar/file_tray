@@ -89,6 +89,8 @@ FileExistsError: [WinError 183] Cannot create a file when that file already exis
 ```
 Appearently, the check "if os.path.isdir(project_folder_name):" does not work. The issue might get fixed by setting the perameter "exist_ok" in os.makedirs(). 
 
+SOLVED: added line "if os.path.exists(self.project_folder_location):". 
+
 ## Author
 
 Sebastjan Leskovar - [sebastjan.leskovar@gmail.com](mailto:sebastjan.leskovar@gmail.com) - [github.com/SebastjanLeskovar](https://github.com/SebastjanLeskovar)
