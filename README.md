@@ -50,11 +50,14 @@ The folder structure will be created at the designated location.
 ### V4.0
 
 * Implementing tkinter GUI
-* Implementing classes
 
-### V3.0
+### V3.5
 
-* Adding creation of a project log file in .docx format.
+* Adding creation of a project specifics file in .docx format.
+
+#### V3.0
+
+* Implementation of classes
 
 #### V2.5
 
@@ -85,6 +88,8 @@ Traceback (most recent call last):
 FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\corp_data\\Project No 6'
 ```
 Appearently, the check "if os.path.isdir(project_folder_name):" does not work. The issue might get fixed by setting the perameter "exist_ok" in os.makedirs(). 
+
+SOLVED: added line "if os.path.exists(self.project_folder_location):". 
 
 ## Author
 

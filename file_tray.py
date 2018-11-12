@@ -1,76 +1,73 @@
 import os
-import json
 import sys
-import datetime
+import json
+import logging
+import folder_structure_creation
 
 service_selection = None
 
-def get_timestamp():
-    timestamp = datetime.datetime.now().replace(microsecond=0)
-    timestamp.strftime('%Y/%m/%d %H:%M:%S')
-    return str(timestamp) + " - "
+log = logging.Logging()
+creation = folder_structure_creation.folder_structure_creation()
 
-def write_to_log(text):
-    log = open('Log.txt', 'a')
-    log.write(get_timestamp())
-    log.write(text)
-    log.write("\n")
-    log.close()
 
-def ask_for_service():
-    write_to_log("Program File Tray started.")
-    print("Welcome to program File Tray.")
-    
-    options = "1. Translation only\n2. Translation with revision\n3. Proofreading\n4. Cancel\nPlease enter 1, 2, 3 or 4: "
+class terminal():
+
+    def start_message(self):
+        print("Welcome to program File Tray.")
+        log.write_to_log("Program File Tray started.")
+
+    def create_project(self):
         
-    number_input = input("What is the service of this project? \n" + options)
+        self.start_message()
 
-    while number_input not in ("1", "2", "3", "4"):
-        number_input = (input("Wrong input. The options are: \n" + options))
+        while True:
+            input_1 = input("Should I create a new project? Type in 'yes' to create a new project or 'no' to cancel. ")
+
+            if input_1.lower() not in ("yes", "y", "1", "no", "n", "2"):
+                print("Wrong input.")
+                log.write_to_log("Wrong input. User entered %s." % input_1)
+                continue
+            else:
+                break
         
-    global service_selection
-    
-    if number_input == "1":
-        service_selection = "translation"
-    elif number_input == "2":
-        service_selection = "translation_and_revision"
-    elif number_input == "3":
-        service_selection = "proofreading"
-    elif number_input == "4":
-        print("The program is terminated.")
-        write_to_log("The program was terminated with sys.exit().")
-        sys.exit()
+        if (input_1 == "yes") or (input_1 == "y") or (input_1 == "1"):
+            log.write_to_log("The user entered '%s'." % input_1)
+            creation.get_data_from_config()
+            creation.project_folder_name_and_location()
+            creation.create_project_folder()
+            terminal.create_subfolders()
 
-def create_project_folder_structure():
-
-    with open("config.json", "r") as json_file:
-        config = json.load(json_file)
-    
-    project_folder_name = "Project No " + str(config["project_number"])
-    project_folder_location = os.path.join(config["root_directory"], project_folder_name)
-
-    if not os.path.exists(project_folder_location):
-    
-        os.makedirs(project_folder_location)
-        print("The project folder '%s' was created." % project_folder_name)
-        write_to_log("The project folder '%s' was created." % project_folder_name)
-
-        config["project_number"] += 1
-    
-        for service in config["service"][service_selection]:
-            os.makedirs(os.path.join(config["root_directory"], project_folder_name, service))
+        else:
+            print("The program was cancelled.")
+            log.write_to_log("The program was terminated with sys.exit().")
+            sys.exit()
+       
+    def create_subfolders(self):
         
-        print("The folders for service '%s' were created." % service_selection)
-        write_to_log("The folders for service %s were created in project folder '%s'." % (service_selection, project_folder_name))
+        while True:
+            input_2 = input("What is the service of this project?\n1. Translation only\n2. Translation with revision\n3. Proofreading\n4. Cancel creating subfolders\nPlease enter 1, 2, 3 or 4: ")
 
-        with open("config.json", "w") as json_file:
-            json.dump(config, json_file, indent=4)
+            if input_2 == "4":
+                print("The program was closed.")
+                log.write_to_log("The program was terminated with sys.exit().")
+                sys.exit()
+            elif input_2 not in ("1", "2", "3"):
+                print("Wrong input.")
+                log.write_to_log("Wrong input: user entered %s." % input_2)
+                continue
+            else:
+                break
 
-    else:
-        print("The folder '%s' already exists at that location. Please check the project folders and change the 'project_number' value in Config accordingly. " % project_folder_name)
-        write_to_log("The folder '%s' was found at the location. The project folder was not created." % project_folder_name)
-    
+        with open("config.json", "r") as json_file:
+            config = json.load(json_file)
 
-ask_for_service()
+            service_selection = config["service_selection"][input_2]
+            log.write_to_log("User selected service '%s'." % service_selection)
+            creation.create_subfolders(service_selection)
+            print("The subfolders for service '%s' were created. Program closed." % service_selection)
+            log.write_to_log("Program closed.")
 
-create_project_folder_structure()
+# Instantiation. 
+terminal = terminal()
+
+terminal.create_project()
