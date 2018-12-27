@@ -40,7 +40,7 @@ This way, your projects will be stored in 'C:\\corp_data'.
 After setting the configuration, use Command Prompt to navigate to the root of the unziped folder (e.g., cd ...\file_tray). Launch the program with the folowing command:
 
 ```bash
-python file_tray.py
+py file_tray.py
 ```
 
 The folder structure will be created at the designated location. 
@@ -89,7 +89,10 @@ FileExistsError: [WinError 183] Cannot create a file when that file already exis
 ```
 Appearently, the check "if os.path.isdir(project_folder_name):" does not work. The issue might get fixed by setting the perameter "exist_ok" in os.makedirs(). 
 
-SOLVED: added line "if os.path.exists(self.project_folder_location):". 
+SOLVED: added the following line:
+```bash
+"if os.path.exists(self.project_folder_location):". 
+```
 
 ## Author
 
