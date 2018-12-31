@@ -15,13 +15,21 @@ Sebastjan Leskovar - [sebastjan.leskovar@gmail.com](mailto:sebastjan.leskovar@gm
 As of version V1.0, the following prerequisites are necessary to run this program:
 - Python 3.x
 
+I have used a virtual environment for development of this program. To use the program, please create a virtual environment, instuctions are described below. 
+
 Please check the 'requirements.txt' file for an up-to-date list of prerequisites.
 
 ### Installation
 
 1. Click the green button 'Clone or download' on the right, and 'Download ZIP'.
 
-2. Extract the ZIP file to your computer. It should be extracted to the top-level (root) folder where you store all your data. That is usually a seperate partition (D:) or a folder on a partition (D:\corp). 
+2. Extract the files from ZIP to any folder on your computer. 
+
+3. Create a virtual environment in that folder. Use Command Prompt to navigate to the root of the unziped folder and use the following command:
+```bash
+python -m venv venv
+```
+This will create a virtual environment in that folder. The program is now ready to use. 
 
 ### How to use
 

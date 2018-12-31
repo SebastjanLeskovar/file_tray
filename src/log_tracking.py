@@ -1,7 +1,7 @@
 import datetime
 
 class Logging():
-    '''Class for creating log notes.'''
+    '''Class for creating log entries.'''
 
     def get_timestamp(self):
         '''Create a time and date stamp when the log was created.'''
