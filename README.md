@@ -43,13 +43,22 @@ After setting the configuration, use Command Prompt to navigate to the root of t
 py file_tray.py
 ```
 
+First, the program will ask the user to create a project folder. If the user agrees, he will be presented with two more options:
+- To create subfolders.
+
+If selected, the program will create subfolders as specified in 'config.json' file. The default services are for a translation agency, but can be easily adjusted in 'config.json' file to any specific needs. 
+
+- To create a project log file. 
+
+If selected, the program will create a log document in the project folder. This document will be used to store all important project information in one place. 
+
 The folder structure will be created at the designated location. 
 
 ## Versioning
 
 ### V4.0
 
-* Implementing tkinter GUI
+* Implementing tkinter GUI.
 
 ### V3.5
 
@@ -57,7 +66,7 @@ The folder structure will be created at the designated location.
 
 #### V3.0
 
-* Implementation of classes
+* Implementation of classes.
 
 #### V2.5
 
