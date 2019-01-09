@@ -15,17 +15,19 @@ Sebastjan Leskovar - [sebastjan.leskovar@gmail.com](mailto:sebastjan.leskovar@gm
 As of version V1.0, the following prerequisites are necessary to run this program:
 - Python 3.x
 
-I have used a virtual environment for development of this program. To use the program, please create a virtual environment, instuctions are described below. 
+Apart from the standard libraries 'os', 'sys', 'json' and 'datetime', the library 'docx' must be installed. Please install it using the following terminal command: 
 
-Please check the 'requirements.txt' file for an up-to-date list of prerequisites.
+```bash
+pip install python-docx
+```
 
 ### Installation
 
-1. Click the green button 'Clone or download' on the right, and 'Download ZIP'.
+1. In GitHub, click the green button 'Clone or download' on the right, and 'Download ZIP'.
 
 2. Extract the files from ZIP to any folder on your computer. 
 
-3. Create a virtual environment in that folder. Use Command Prompt to navigate to the root of the unziped folder and use the following command:
+
 ```bash
 python -m venv venv
 ```
@@ -35,7 +37,7 @@ This will create a virtual environment in that folder. The program is now ready 
 
 Before using the program, please set a parameter in the 'config.json' file, located at the top-most level. Open and edit it with any text editor or ide (Notepad will do). 
 
-That parameter is "root_directory", you have to insert your root directory where the project folders will be stored. 
+That parameter is "root_directory", please insert your root directory where the project folders will be stored. 
 
 If unsure, use the default setting: 
 ```bash
@@ -48,10 +50,11 @@ This way, your projects will be stored in 'C:\\corp_data'.
 After setting the configuration, use Command Prompt to navigate to the root of the unziped folder (e.g., cd ...\file_tray). Launch the program with the folowing command:
 
 ```bash
-py file_tray.py
+python file_tray.py
 ```
 
 First, the program will ask the user to create a project folder. If the user agrees, he will be presented with two more options:
+
 - To create subfolders.
 
 If selected, the program will create subfolders as specified in 'config.json' file. The default services are for a translation agency, but can be easily adjusted in 'config.json' file to any specific needs. 
@@ -70,7 +73,7 @@ The folder structure will be created at the designated location.
 
 ### V3.5
 
-* Adding creation of a project specifics file in .docx format.
+* Option to create a project specifics file in .docx format.
 
 #### V3.0
 
@@ -94,7 +97,7 @@ The folder structure will be created at the designated location.
 
 ## Bugs and Issues
 
-1. (03.11.2018): If a project folder already axists at the location, the following error is raised:
+1. (03.11.2018): If a project folder already exists at the location, the following error is raised:
 ```bash
 Traceback (most recent call last):
   File "file_tray.py", line 68, in <module>
