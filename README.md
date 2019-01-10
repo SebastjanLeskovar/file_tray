@@ -31,9 +31,9 @@ pip install python-docx
 
 #### Config.json
 
-Before using the program, please set a parameter in the 'config.json' file, located at the top-most level. Open and edit the file with any text editor or ide (Notepad will do). 
+Before using the program, please set a parameter in the 'config.json' file, located at the top-most level. Open and edit the file with any text editor or IDE (Notepad will do). 
 
-That parameter is "root_directory", please insert your root directory where you wish to store your project folders. You need to use double backslashes. 
+That parameter is "root_directory", please specify your root directory where you wish to store your project folders. You need to use double backslashes. 
 
 If unsure, use the default setting: 
 ```bash
@@ -51,7 +51,7 @@ After setting the configuration, use Command Prompt to navigate to the root of t
 python file_tray.py
 ```
 
-First, the program will ask the user to create a project folder. If the user agrees, he will be presented with two more options:
+First, the program will ask the user to create a project folder. If the user agrees, he or she will be presented with two more options:
 
 - To create subfolders.
 
