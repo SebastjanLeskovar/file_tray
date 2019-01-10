@@ -3,14 +3,14 @@ import docx
 import datetime
 from src import log_tracking, project_information
 
-class Log_document():
+class LogDocument():
     '''This class is used to create a log document and insert current time into that document.'''
 
     def create_log_document(self):
         '''Create a document with the project's information in the project folder. The document can be used to hold notes for this project.'''
 
         log = log_tracking.Logging()
-        pr_info = project_information.project_info()
+        pr_info = project_information.ProjectInfo()
         pr_info.get_project_info()
         
         doc = docx.Document()

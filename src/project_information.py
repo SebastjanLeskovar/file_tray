@@ -1,7 +1,7 @@
 import os
 import json
 
-class project_info:
+class ProjectInfo:
     '''Open config.json and get values 'root_directory' and 'project_number.'''
 
     def get_project_info(self):

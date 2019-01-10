@@ -5,11 +5,11 @@ from src import folder_structure, log_document, log_tracking
 
 
 log = log_tracking.Logging()
-structure = folder_structure.folder_structure()
-log_document = log_document.Log_document()
+structure = folder_structure.FolderStructure()
+log_document = log_document.LogDocument()
 
     
-class ui():
+class UI():
     '''Basic UI of the program.'''
     
     def create_project(self):
@@ -68,8 +68,8 @@ class ui():
                     break
 
                 elif input_3.lower() in ("no", "n", "2"):
-                    break
                     log.write_to_log("The user did not decide to create a log document.")
+                    break
                 
                 else:
                     print("Wrong input.")
@@ -80,10 +80,11 @@ class ui():
 
             print("Program completed creating your project.")
         
-        else:
-            print("Only the project folder was created.")
-
         log.write_to_log("Program closed.")
 
-auto_start = ui()
+# if '__name__' == '__main__':
+#     try:
+auto_start = UI()
 auto_start.create_project()  # Automatically start the program.
+    # except KeyboardInterrupt:
+        # print("The program was closed by user.")

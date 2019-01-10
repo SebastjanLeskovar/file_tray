@@ -3,10 +3,10 @@ import os
 from src import log_tracking, project_information
 
 log = log_tracking.Logging()
-pr_info = project_information.project_info()
+pr_info = project_information.ProjectInfo()
 
 # Create folder structure (project folder and subfolders)
-class folder_structure():
+class FolderStructure():
 
     project_folder_created = False
 

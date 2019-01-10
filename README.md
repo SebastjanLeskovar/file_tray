@@ -27,17 +27,13 @@ pip install python-docx
 
 2. Extract the files from ZIP to any folder on your computer. 
 
-
-```bash
-python -m venv venv
-```
-This will create a virtual environment in that folder. The program is now ready to use. 
-
 ### How to use
 
-Before using the program, please set a parameter in the 'config.json' file, located at the top-most level. Open and edit it with any text editor or ide (Notepad will do). 
+#### Config.json
 
-That parameter is "root_directory", please insert your root directory where the project folders will be stored. 
+Before using the program, please set a parameter in the 'config.json' file, located at the top-most level. Open and edit the file with any text editor or ide (Notepad will do). 
+
+That parameter is "root_directory", please insert your root directory where you wish to store your project folders. You need to use double backslashes. 
 
 If unsure, use the default setting: 
 ```bash
@@ -46,6 +42,8 @@ If unsure, use the default setting:
 This way, your projects will be stored in 'C:\\corp_data'. 
 
 'project_number' will start at '1'. If and error occurs, please set this parameter to the number of the next project. E.g., if the last project's name is 'Project No 4', please set this number to '5'. 
+
+#### Starting the program
 
 After setting the configuration, use Command Prompt to navigate to the root of the unziped folder (e.g., cd ...\file_tray). Launch the program with the folowing command:
 
@@ -67,9 +65,13 @@ The folder structure will be created at the designated location.
 
 ## Versioning
 
-### V4.0
+### V5.0
 
 * Implementing tkinter GUI.
+
+### V4.0
+
+* Wizard at first launch to specify project manager's name and folder location.
 
 ### V3.5
 
